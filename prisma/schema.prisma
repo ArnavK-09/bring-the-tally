@@ -1,0 +1,57 @@
+// Database 
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+// Models 
+model Game {
+  id         String     @id @default(auto()) @map("_id") @db.ObjectId
+  dice       Int        @default(1)
+  lastAction DiceAction @default(ADD)
+  target     Int
+  current    Int        @default(1)
+  started    DateTime   @default(now())
+  ended      DateTime?
+  end        Boolean    @default(false)
+  player     Player     @relation(fields: [playerId], references: [discord])
+  playerId   String
+  history    History[]
+
+  @@unique([playerId, id])
+}
+
+model Player {
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  discord     String     @unique
+  rank        PlayerRank @default(ROOKIE)
+  gamesPlayer Int        @default(0)
+  xp          Int        @default(100)
+  games       Game[]
+}
+
+// Enums & Types 
+enum PlayerRank {
+  NEWBIE
+  ROOKIE
+  INTERMEDIATE
+  PROFICIENT
+  EXPERIENCED
+  EXPERT
+}
+
+enum DiceAction {
+  ADD
+  DIVIDE
+  MULTIPLY
+  SUBTRACT
+}
+
+type History {
+  operation String
+  num       Int
+}

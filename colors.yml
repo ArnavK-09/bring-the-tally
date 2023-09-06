@@ -1,0 +1,12 @@
+# Discord Pallete
+branding:
+  blurple: #5865F2
+  black: #000000
+  green: #57F287
+  yellow: #FEE75C
+  pink: #EB459E
+
+# Background colors for Transparency (dark mode)
+transparency_colors:
+  embed: #2b2d31
+  message: #2e3035
