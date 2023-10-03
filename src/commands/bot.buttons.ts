@@ -328,7 +328,7 @@ export class BasicBotButtons {
   }
 
   /**
-   * @name roll_faq
+   * @name view_roll_history
    * @description Button to view User's current game roll history
    * @todo pagination
    * @param {ButtonInteraction} ButtonInteraction

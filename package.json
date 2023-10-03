@@ -1,10 +1,9 @@
 {
   "name": "bring-the-tally",
   "version": "1.0.0",
-  "private": true,
   "license": "MIT",
-  "type": "module",
   "main": "build/main.js",
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "build:changelog": "npx @discordx/changelog --src src",
@@ -22,10 +21,14 @@
     "discordx": "^11.7.6",
     "mongodb": "^5.8.1",
     "mongoose": "^7.4.5",
+    "pino": "^8.15.1",
     "typeorm": "^0.3.17"
   },
   "devDependencies": {
     "@types/node": "^20.5.6",
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
+    "eslint": "^8.50.0",
     "nodemon": "^3.0.1",
     "prettier": "^2.8.8",
     "prisma": "^5.2.0",
