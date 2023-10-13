@@ -56,6 +56,18 @@ export class GeneralCommands {
 
   /**
    * @name heartbeat
+   * @description Returns ping of bot's heartbeat...
+   */
+  @Slash({
+    name: "faqs",
+    description: "Checkout frequtnly asked questions about bot...",
+  })
+  async faqs(interaction: CommandInteraction): Promise<void> {
+    heartbeatProcess(interaction);
+  }
+
+  /**
+   * @name heartbeat
    * @description Button to check bot's heartbeat
    * @param {ButtonInteraction} ButtonInteraction
    */
